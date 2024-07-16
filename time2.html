@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100svh;
+            border: 2px solid;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .hours{
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: 50px;
+            color: rgb(232, 237, 238);
+            background: radial-gradient(violet,indigo);
+        }
+        .minutes{
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: 50px;
+            color: rgb(232, 237, 238);
+            background: radial-gradient(violet,indigo);
+        }
+        .seconds{
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: 50px;
+            color: rgb(232, 237, 238);
+            background: radial-gradient(violet,indigo);
+        }
+        .msec{
+            width: 200px;
+            height: 200px;
+            border: 2px solid blue;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bolder;
+            font-size: 50px;
+            color: rgb(232, 237, 238);
+            background: radial-gradient(violet,indigo);
+        }
+        .dots{
+            font-size: 100px;
+            color: blue;
+        }
+        .hai{
+            position: absolute;
+            top: 80svh;
+            left: 30%;
+        }
+        .hai1{
+            position: absolute;
+            top: 80svh;
+            left: 50%;
+        }
+        .hai2{
+            position: absolute;
+            top: 80svh;
+            left: 70%;
+        }
+        .hai3{
+            position: absolute;
+            top: 80svh;
+            left: 90%;
+        }
+        .hai4{
+            position: absolute;
+            top: 80svh;
+            left: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="hours"></div>
+    <p class="dots">:</p>
+    <div class="minutes"></div>
+    <p class="dots">:</p>
+    <div class="seconds"></div>
+    <p class="dots">:</p>
+    <div class="msec"></div>
+    <button onclick="sw(event)" class="hai4">S T O P W A T C H</button>
+    <button onclick="start(event)" class="hai">S T A R T</button>
+    <button onclick="stop(event)" class="hai1">S T o p</button>
+    <button onclick="reset(event)" class="hai2">R E S E T</button>
+    <button onclick="times(event)" class="hai3">T I M E</button>
+    <script >
+    function fun(){
+    var a = new Date();
+    document.getElementsByClassName("hours")[0].innerHTML=a.getHours();
+    document.getElementsByClassName("minutes")[0].innerHTML=a.getMinutes();
+    document.getElementsByClassName("seconds")[0].innerHTML=a.getSeconds();
+    document.getElementsByClassName("msec")[0].innerHTML=a.getMilliseconds();
+}
+setInterval(fun,1);
+    window.onload = function () {
+        var hours = 00;
+        var seconds = 00; 
+        var minutes = 00; 
+        var msec = 00;
+        var appendTens = document.getElementsByClassName("hours")
+        var appendSeconds = document.getElementsByClassName("minutes")
+        var buttonStart = document.getElementsByClassName("seconds");
+        var appendSeconds = document.getElementsByClassName("msec")
+        var buttonStart = document.getElementsByClassName("start");
+        var buttonStop = document.getElementsByClassName("stop");
+        var buttonReset = document.getElementsByClassName("reset");
+        var Interval ;
+      
+        buttonStart.onclick = function() {
+          
+          clearInterval(Interval);
+           Interval = setInterval(startTimer, 10);
+        }
+        
+          stop.onclick = function() {
+             clearInterval(Interval);
+        }
+        
+      
+        reset.onclick = function() {
+           clearInterval(Interval);
+          tens = "00";
+            seconds = "00";
+          appendhours.innerHTML = hours;
+          appendminutess.innerHTML = minutes;
+          appendseconds.innerHTML = seconds;
+          appendmsecs.innerHTML = msec;
+        }
+        
+         
+        
+        function startTimer () {
+          tens++; 
+          
+          if(tens <= 9){
+            appendTens.innerHTML = "0" + tens;
+          }
+          
+          if (tens > 9){
+            appendTens.innerHTML = tens;
+            
+          } 
+          
+          if (tens > 99) {
+            console.log("seconds");
+            seconds++;
+            appendSeconds.innerHTML = "0" + seconds;
+            tens = 0;
+            appendTens.innerHTML = "0" + 0;
+          }
+          
+          if (seconds > 9){
+            appendSeconds.innerHTML = seconds;
+          }
+        
+        }
+      }
+
+    </script>
+</body>
+</html>

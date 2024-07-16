@@ -1,0 +1,52 @@
+body{
+    width: 100%;
+    height: 100svh;
+    border: 2px solid;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hours{
+    width: 200px;
+    height: 200px;
+    border: 2px solid blue;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 50px;
+    color: rgb(232, 237, 238);
+    background: radial-gradient(violet,indigo);
+}
+.minutes{
+    width: 200px;
+    height: 200px;
+    border: 2px solid blue;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 50px;
+    color: rgb(232, 237, 238);
+    background: radial-gradient(violet,indigo);
+}
+.seconds{
+    width: 200px;
+    height: 200px;
+    border: 2px solid blue;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: 50px;
+    color: rgb(232, 237, 238);
+    background: radial-gradient(violet,indigo);
+}
+.dots{
+    font-size: 100px;
+    color: blue;
+}
